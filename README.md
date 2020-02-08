@@ -2,8 +2,6 @@
 A simple &amp; raw python network sniffer (TCP/UDP) for Linux systems.
 
 ## Usage examples
-All ports of TCP/UDP `python3 sniffy.py`
-
-Port 80 and TCP `python3 sniffy.py -p 80 -t 6`
-
-Port 443 UDP `python3 sniffy.py -p 443 -t 17`
+All ports and TCP/UDP `python3 sniffy.py`
+TCP and port 80 `python3 sniffy.py -p 80 -t 6`
+UDP and port 443 `python3 sniffy.py -p 443 -t 17`
