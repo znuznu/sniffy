@@ -83,7 +83,6 @@ def dump(source):
 		readable = binascii.unhexlify(hexa).decode('utf-8')
 		hexa = ' '.join(hexa_list)
 		result.append('{:04d}   {:<48}    {}\n'.format(i, hexa, readable))
-		
 	return ''.join(result)
 
 def translate_MAC(addr):
@@ -145,26 +144,26 @@ def init(protocoles, ports):
 def get_parser():
     parser = argparse.ArgumentParser(description='A simple & raw python network sniffer (TCP/UDP) for Linux systems.')
     parser.add_argument(
-    	'-t',
-        '--transport',
-        nargs='+',
-        help='transport protocoles ID (6=TCP, 17=UDP)',
-        choices=DEFAULT_PROTOCOLES,
-		default=DEFAULT_PROTOCOLES,
-		type=int,
-		dest='protocoles'
+	'-t',
+	'--transport',
+	nargs='+',
+	help='transport protocoles ID (6=TCP, 17=UDP)',
+	choices=DEFAULT_PROTOCOLES,
+	default=DEFAULT_PROTOCOLES,
+	type=int,
+	dest='protocoles'
     )
-    
+
     parser.add_argument(
-        '-p',
-        '--port',
-        nargs='+',
-        help='source port(s)',
-		default=DEFAULT_PORTS,
-		type=int,
-		dest='ports'
+	'-p',
+	'--port',
+	nargs='+',
+	help='source port(s)',
+	default=DEFAULT_PORTS,
+	type=int,
+	dest='ports'
     )
-    
+
     return parser
 
 def signal_handler(signal, frame):
@@ -172,14 +171,11 @@ def signal_handler(signal, frame):
 
 def main():
 	signal.signal(signal.SIGINT, signal_handler)
-	
 	parser = get_parser()
 	args = parser.parse_args()
-	
 	ports = args.ports
 	protocoles = args.protocoles
-	
 	init(protocoles, ports)
-	
+
 if __name__ == "__main__":
 	main()
