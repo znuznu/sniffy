@@ -1,5 +1,5 @@
 # sniffy
-A simple & raw python network sniffer (TCP/UDP protocols) for Linux based systems.  
+A raw python network sniffer (TCP/UDP protocols) for Linux based systems.  
 
 ## Usage examples
 Must be run as __root__.    
